@@ -1,4 +1,4 @@
-n=2
+n=5
 for i in range(n):
     j=0
     while j<n:
