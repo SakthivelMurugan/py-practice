@@ -4,37 +4,43 @@ class Queue:
         self.sizeOfQueue=sizeOfQueue
 
     def enqueue(self,val):
-        if len(self.l)<self.sizeOfQueue:
+        if not self.isFull():
             self.l.append(val)
         else:
-            print("queue reached the size")
+            print("Queue is Full")
     def showQueue(self):
         return self.l
     def deque(self):
-        self.l.pop(0)
+        if not self.isEmpty():
+            self.l.pop(0)
+        else:
+            print("Queue is Empty")
     def peak(self):
-        return self.l[-1]
+        return self.l[0]
     def isFull(self):
         if len(self.l)==self.sizeOfQueue:
-            print("Queue is full")
-        else:
-            print("is not full")
+            return True
     def isEmpty(self):
         if len(self.l)==0:
-            print("Queue is empty")
-        else:
-            print("is not empty")
+            return True
 ob=Queue(5)
 ob.enqueue(1)
 print(ob.showQueue())
+ob.enqueue(2)
+print(ob.showQueue())
 ob.enqueue(3)
+print(ob.showQueue())
+ob.enqueue(4)
 print(ob.showQueue())
 ob.enqueue(5)
 print(ob.showQueue())
-ob.enqueue(7)
-print(ob.showQueue())
-ob.enqueue(9)
-print(ob.showQueue())
-ob.deque()
-print(ob.showQueue())
+ob.enqueue(6)
 print(ob.peak())
+ob.deque()
+ob.deque()
+ob.deque()
+ob.deque()
+ob.deque()
+ob.deque()
+
+
